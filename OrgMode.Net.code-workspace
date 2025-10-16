@@ -1,0 +1,11 @@
+{
+    "folders": [
+		{
+      "name": "OrgMode.Net Solution",
+			"path": "."
+		}
+	],
+  "extensions": {
+    "unwantedRecommendations": ["ms-dotnettools.csdevkit"]
+  }
+}

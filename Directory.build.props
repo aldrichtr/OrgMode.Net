@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file sets the directories used by the project files (.csproj) -->
+<Project>
+  <PropertyGroup Label="Project Structure">
+    <!-- this registers the property `RootDirectory` as the top level dir -->
+    <RootDirectory>$(MSBuildThisFileDirectory.TrimEnd('/').TrimEnd('\'))</RootDirectory>
+    <!-- Project directories -->
+    <SourceDirectory>$(RootDirectory)\src</SourceDirectory>
+    <StageDirectory>$(RootDirectory)\stage</StageDirectory>
+    <ArtifactDirectory>$(RootDirectory)\out</ArtifactDirectory>
+    <BaseOutputPath>$(ArtifactDirectory)</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(ArtifactDirectory)\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <!-- Everything will be built in the out directory, but the final product will be in
+      stage -->
+    <OutDir>$(StageDirectory)\$(MSBuildProjectName)</OutDir>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Utf8Output>true</Utf8Output>
+  </PropertyGroup>
+  <PropertyGroup Label="Code Analysis">
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+    <AnalysisMode>all</AnalysisMode>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+</Project>

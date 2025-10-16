@@ -1,0 +1,4 @@
+<Project>
+  <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+    <Sdk Name="Microsoft.Build.CentralPackageVersions" Version="2.0.79" />
+</Project>

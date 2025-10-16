@@ -1,0 +1,8 @@
+## The Artifact directory
+out/**
+!out/CodeQuality
+
+stage/**
+publish/**
+
+!**/.gitkeep

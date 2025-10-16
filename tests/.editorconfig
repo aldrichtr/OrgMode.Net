@@ -1,0 +1,7 @@
+
+[*.cs]
+# Allow test method names to have underscores in them
+dotnet_diagnostic.CA1707.severity = none
+
+# Allow test classes to be public instead of internal
+dotnet_diagnostic.CA1515.severity = none

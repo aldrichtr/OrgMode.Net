@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OrgMode.Syntax;
 
-namespace OrgMode.Tests;
+namespace OrgMode.Tests.Syntax;
 
 [TestClass]
 public sealed class PositionTests {

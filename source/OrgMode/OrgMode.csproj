@@ -7,4 +7,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <RootNamespace>OrgMode</RootNamespace>
+  </PropertyGroup>
 </Project>

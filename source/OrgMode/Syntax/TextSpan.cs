@@ -6,10 +6,10 @@ namespace OrgMode.Syntax;
 /// </summary>
 /// <param name="start"></param>
 /// <param name="end"></param>
-public record TextSpan(Position start, Position end) : Span(start, end) {
-  public IReadOnlyList<string>? Text {
-    get; init;
-  }
+public record TextSpan(Position Start, Position End) : Span(Start, End) {
+
+  // TODO: How do I keep this synchronized with the reader?
+  public IReadOnlyList<string>? Text { get; init; }
 
   public TextSpan(Position start, Position end, IReadOnlyList<string>? text)
     : this(start, end) {

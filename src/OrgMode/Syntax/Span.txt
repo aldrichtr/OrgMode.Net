@@ -1,0 +1,15 @@
+
+namespace OrgMode.Syntax;
+
+/// <summary>
+/// A portion of content defined by a <paramref name="Start"/> position and an <paramref name="End"/>
+/// </summary>
+/// <param name="Start">The first <c>Position</c> in the content</param>
+/// <param name="End">The last <c>Position</c> in the content</param>
+public record Span(Position Start, Position End) {
+  public long Length => End.Index - Start.Index;
+
+  public bool IsEmpty => Length == 0;
+
+  public override string ToString() => $"[{Start.Index}, {End.Index})";
+}

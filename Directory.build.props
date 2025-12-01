@@ -1,28 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- This file sets the directories used by the project files (.csproj) -->
 <Project>
-  <PropertyGroup Label="Project Structure">
+  <!-- ======================================================================================================== -->
+  <!-- ==================================== Directory Information ============================================= -->
+  <!-- ======================================================================================================== -->
+  <PropertyGroup Label="Directory Information">
     <!-- this registers the property `RootDirectory` as the top level dir -->
-    <RootDirectory>$(MSBuildThisFileDirectory.TrimEnd('/').TrimEnd('\'))</RootDirectory>
+    <RootDirectory>$([MSBuild]::NormalizeDirectory($(MSBuildThisFileDirectory)))</RootDirectory>
     <!-- Project directories -->
-    <SourceDirectory>$(RootDirectory)\src</SourceDirectory>
-    <StageDirectory>$(RootDirectory)\stage</StageDirectory>
-    <ArtifactDirectory>$(RootDirectory)\out</ArtifactDirectory>
+    <SourceDirectory>$([MSBuild]::NormalizeDirectory($(RootDirectory)src))</SourceDirectory>
+    <StageDirectory>$([MSBuild]::NormalizeDirectory($(RootDirectory)stage))</StageDirectory>
+    <ArtifactDirectory>$([MSBuild]::NormalizeDirectory($(RootDirectory)out))</ArtifactDirectory>
+    <TestsDirectory>$([MSBuild]::NormalizeDirectory($(RootDirectory)tests))</TestsDirectory>
+  </PropertyGroup>
+  <!-- ======================================================================================================== -->
+  <!-- ==================================== Solution-wide Information ========================================= -->
+  <!-- ======================================================================================================== -->
+  <PropertyGroup Label="Solution Information">
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <LangVersion>Latest</LangVersion>
+    <!-- -->
+    <OutputObjectDirectory>$([MSBuild]::NormalizeDirectory($(ArtifactDirectory)obj))</OutputObjectDirectory>
+    <!-- Ensure that compiler errors emit full paths so that files can be correctly annotated in GitHub. -->
+    <GenerateFullPaths>true</GenerateFullPaths>
+    <!-- Where to put the results of the build -->
     <BaseOutputPath>$(ArtifactDirectory)</BaseOutputPath>
-    <BaseIntermediateOutputPath>$(ArtifactDirectory)\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>$(OutputObjectDirectory)$(MSBuildProjectName)</BaseIntermediateOutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <!-- Everything will be built in the out directory, but the final product will be in
       stage -->
-    <OutDir>$(StageDirectory)\$(MSBuildProjectName)</OutDir>
+    <OutDir>$(StageDirectory)$(MSBuildProjectName)</OutDir>
   </PropertyGroup>
-  <PropertyGroup>
-    <Utf8Output>true</Utf8Output>
-  </PropertyGroup>
+  <!-- ======================================================================================================== -->
+  <!-- ==================================== Code Analysis ===================================================== -->
+  <!-- ======================================================================================================== -->
   <PropertyGroup Label="Code Analysis">
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
-    <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
-    <AnalysisMode>all</AnalysisMode>
+    <AnalysisMode>All</AnalysisMode>
+    <AnalysisLevel>latest</AnalysisLevel>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
   </PropertyGroup>
 </Project>

@@ -10,4 +10,8 @@
   <PropertyGroup>
     <RootNamespace>OrgMode</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Parlot" />
+  </ItemGroup>
 </Project>

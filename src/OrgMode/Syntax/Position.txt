@@ -15,7 +15,7 @@ public class Position : IEquatable<Position>, IComparable<Position> {
   /// <summary>
   /// Creates a new Position.
   /// </summary>
-  /// <param name="index">Zero-based index long the content.</param>
+  /// <param name="index">Zero-based offset into the content.</param>
   /// <param name="line">One-based line number (must be &gt;= 1).</param>
   /// <param name="column">One-based column number (must be &gt;= 1).</param>
   public Position(long index, long line, long column) {

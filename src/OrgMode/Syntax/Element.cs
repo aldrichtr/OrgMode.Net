@@ -20,23 +20,23 @@ public abstract class Element : IElement {
 
 // SECTION Property methods
 
-  public void SetData(object key, object value) {
+  public virtual void SetData(object key, object value) {
     ArgumentNullException.ThrowIfNull(key, "No key was provided");
     _data[key] = value;
   }
 
-  public bool ContainsData(object key) {
+  public virtual bool ContainsData(object key) {
     ArgumentNullException.ThrowIfNull(key, "No key was provided");
     return _data.ContainsKey(key);
   }
 
-  public object? GetData(object key) {
+  public virtual object? GetData(object key) {
     ArgumentNullException.ThrowIfNull(key, "No key was provided");
     _data.TryGetValue(key, out var value);
     return value;
   }
 
-  public bool RemoveData(object key) {
+  public virtual bool RemoveData(object key) {
     return _data.Remove(key);
   }
 // !SECTION

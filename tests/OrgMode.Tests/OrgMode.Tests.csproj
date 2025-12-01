@@ -12,6 +12,6 @@
     <RootNamespace>OrgMode.Test</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\source\OrgMode\OrgMode.csproj" />
+    <ProjectReference Include="$(SourceDirectory)\OrgMode\OrgMode.csproj" />
   </ItemGroup>
 </Project>

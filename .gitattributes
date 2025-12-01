@@ -14,9 +14,6 @@
 *.{cmd,[cC][mM][dD]} text eol=crlf
 *.{bat,[bB][aA][tT]} text eol=crlf
 
-# Fix syntax highlighting on GitHub to allow comments
-.vscode/*.json linguist-language=JSON-with-Comments
-
 #
 # Exclude files from exporting
 #

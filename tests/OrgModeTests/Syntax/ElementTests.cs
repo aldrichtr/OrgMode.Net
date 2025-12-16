@@ -1,22 +1,26 @@
+using System;
+using System.Reflection;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using OrgMode.Syntax;
 
-namespace OrgMode.Tests.Syntax;
+namespace OrgModeTests.Syntax;
 
 [TestClass]
 public class ElementTests {
-  private TestElement element = null!;
+  private Element element = null!;
 
   [TestInitialize]
   public void Setup() {
-    element = new TestElement();
+    element = new Element();
   }
 
   [TestMethod]
-  [ExpectedException(typeof(ArgumentNullException))]
   public void SetData_NullKey_Throws() {
-    element.SetData(null!, "value");
+    Assert.ThrowsExactly<ArgumentNullException>(
+      () => element.SetData(null!, "value")
+    );
   }
 
   [TestMethod]
@@ -35,9 +39,10 @@ public class ElementTests {
   }
 
   [TestMethod]
-  [ExpectedException(typeof(ArgumentNullException))]
   public void AddContent_Null_Throws() {
-    element.AddContent(null!);
+    Assert.ThrowsExactly<ArgumentNullException>(
+      () => element.AddContent(null!)
+    );
   }
 
   [TestMethod]
@@ -47,9 +52,10 @@ public class ElementTests {
   }
 
   [TestMethod]
-  [ExpectedException(typeof(ArgumentOutOfRangeException))]
   public void InsertContent_NegativeIndex_Throws() {
-    element.InsertContent(-1, "oops");
+    Assert.ThrowsExactly<ArgumentOutOfRangeException>(
+      () => element.InsertContent(-1, "oops")
+    );
   }
 
   [TestMethod]
@@ -60,8 +66,9 @@ public class ElementTests {
   }
 
   [TestMethod]
-  [ExpectedException(typeof(ArgumentOutOfRangeException))]
   public void RemoveContentAt_InvalidIndex_Throws() {
-    element.RemoveContentAt(0);
+    Assert.ThrowsExactly<ArgumentOutOfRangeException>(
+      () => element.RemoveContentAt(0)
+    );
   }
 }

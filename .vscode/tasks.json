@@ -8,15 +8,13 @@
       "type": "process",
       "args": [
         "test",
-        "${workspaceFolder}/tests/OrgMode.Tests/OrgMode.Tests.csproj",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary;ForceNoAlign"
       ],
       "problemMatcher": "$msCompile"
     },
     {
       "label": "build",
       "command": "dotnet",
+      "group": { "kind": "build", "isDefault": true },
       "type": "process",
       "args": [
         "build",

@@ -6,7 +6,7 @@ namespace OrgMode.Syntax;
 /// Represents a syntax element in an Org mode document.
 /// Contains a Type, a collection of Properties, and a Content collection
 /// </summary>
-public abstract class Element : IElement {
+public class Element : IElement {
 
   /// <summary>
   /// Holds the properties associated with the element

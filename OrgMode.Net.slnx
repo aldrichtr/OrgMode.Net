@@ -1,8 +1,8 @@
 <Solution>
-  <Folder Name="/source/">
-    <Project Path="source/OrgMode/OrgMode.csproj" />
+  <Folder Name="/src/">
+    <Project Path="src/OrgMode/OrgMode.csproj" />
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="tests/OrgMode.Tests/OrgMode.Tests.csproj" />
+    <Project Path="tests/OrgModeTests/OrgModeTests.csproj" />
   </Folder>
 </Solution>

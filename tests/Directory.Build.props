@@ -1,21 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- File: tests/Directory.Build.props
+ Common build properties for all test projects
+-->
 <Project>
-  <PropertyGroup>
-    <ParentDirectoryBuildPropsPath>
-    $([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)..\'))
-  </ParentDirectoryBuildPropsPath>
-  </PropertyGroup>
+  <!-- SECTION: Import Parent Build File  -->
   <ImportGroup>
-    <Import Project="$(ParentDirectoryBuildPropsPath)" />
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('$(MSBuildThisFile)',
+  '$(MSBuildThisFileDirectory)..\'))"/>
   </ImportGroup>
+  <!-- !SECTION -->
+
+   <!-- SECTION Testing -->
   <PropertyGroup Label="Testing">
+    <TestSettingsDirectory>$(TestsDirectory)settings</TestSettingsDirectory>
+    <TestDataDirectory>$(TestsDirectory)data</TestDataDirectory>
+    <TestOutputDirectory>$(ArtifactDirectory)CodeQuality</TestOutputDirectory>
+    <TestOutputFile>$(MSBuildProjectName).json</TestOutputFile>
     <IsTestProject>true</IsTestProject>
+    <!-- Enable Microsoft.Testing.Platform -->
     <EnableMSTestRunner>true</EnableMSTestRunner>
     <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+    <!-- Displays error on console in addition to the log file. -->
     <TestingPlatformShowTestsFailure>true</TestingPlatformShowTestsFailure>
     <TestingPlatformCaptureOutput>true</TestingPlatformCaptureOutput>
   </PropertyGroup>
-  <PropertyGroup Label="Code Quality">
-    <ErrorLog>$(ArtifactDirectory)\CodeQuality\$(MSBuildProjectName).json</ErrorLog>
-  </PropertyGroup>
-</Project>
+   <!-- !SECTION Testing -->
+
+   <!-- SECTION Code Quality -->
+
+   <PropertyGroup Label="Code Quality">
+     <ErrorLog>$(TestOutputDirectory)$(TestOutputFile)</ErrorLog>
+    </PropertyGroup>
+    <!-- !SECTION Code Quality -->
+  </Project>

@@ -1,4 +1,5 @@
-
+# tests/.editorconfig
+# These settings pertain to tests only
 [*.cs]
 # Allow test method names to have underscores in them
 dotnet_diagnostic.CA1707.severity = none

@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OrgMode.Syntax;
 
-namespace OrgMode.Tests.Syntax;
+namespace OrgModeTests.Syntax;
 
 [TestClass]
 public sealed class PositionTests {
@@ -37,8 +37,8 @@ public sealed class PositionTests {
   [TestMethod]
   public void Advance_the_position_with_invalid_values() {
     var p = new Position();
-    Assert.ThrowsException<ArgumentOutOfRangeException>(() => p.Advance(-3));
-    Assert.ThrowsException<ArgumentOutOfRangeException>(() => p.Advance(0));
+    Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => p.Advance(-3));
+    Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => p.Advance(0));
   }
 
   [TestMethod]

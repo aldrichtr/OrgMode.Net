@@ -1,0 +1,11 @@
+# tests/.editorconfig
+# These settings pertain to tests only
+[*.cs]
+# Allow test method names to have underscores in them
+dotnet_diagnostic.CA1707.severity = none
+
+# Allow test classes to be public instead of internal
+dotnet_diagnostic.CA1515.severity = none
+
+# Allow namespace to be different than folder path
+dotnet_diagnostic.IDE0130.severity = none

@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- File: tests/Directory.Packages.props
+ All packages are listed in the Directory.Packages.props, while only the
+ packages relavant to test projects are listed here.
+-->
 <Project>
-  <PropertyGroup>
-  <ParentDirectoryBuildPropsPath>
-    $([MSBuild]::GetPathOfFileAbove('Directory.Packages.props', '$(MSBuildThisFileDirectory)..\'))
-  </ParentDirectoryBuildPropsPath>
-</PropertyGroup>
-<ImportGroup>
-  <Import Project="$(ParentDirectoryBuildPropsPath)"/>
-</ImportGroup>
+  <!-- SECTION Import Parent Package File -->
+  <ImportGroup>
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('$(MSBuildThisFile)',
+  '$(MSBuildThisFileDirectory)..\'))"/>
+  </ImportGroup>
+  <!-- !SECTION -->
+  <!-- SECTION Reference packages -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" />
-    <PackageReference Include="MSTest" />
-    <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
+    <PackageReference Include="Parlot"/>
+    <PackageReference Include="Microsoft.NET.Test.Sdk"/>
+    <!--
+      MSTest meta package:
+          Microsoft.NET.Test.Sdk
+          MSTest.TestAdapter
+          MSTest.TestFramework
+          MSTest.Analyzers
+          Microsoft.Testing.Extensions.TrxReport
+          Microsoft.Testing.Extensions.CodeCoverage
+    -->
+    <PackageReference Include="MSTest"/>
+    <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting"/>
   </ItemGroup>
+  <!-- !SECTION -->
 </Project>

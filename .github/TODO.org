@@ -1,0 +1,18 @@
+#+TITLE: OrgMode.Net TODO
+
+* DONE Implement Position struct
+  CLOSED: [2025-10-16 Thu]
+  [[file:source/OrgMode/Syntax/Position.cs][source/OrgMode/Syntax/Position.cs]]
+  - Notes: readonly struct Position, Index/Line/Column, Start, Advance helpers
+
+* TODO Build and run tests
+  - Blocker: NU1008 in test project (central package versioning)
+  - Action: Fix test project packageVersion or build library project only
+
+* DONE Add TokenType enum and update IOrgToken
+  [[file:source/OrgMode/Reader/TokenType.cs][TokenType.cs]]
+  [[file:source/OrgMode/Reader/IOrgToken.cs][IOrgToken.cs]]
+  [[file:source/OrgMode/Reader/OrgToken.cs][OrgToken.cs]]
+
+* TODO Add tests for Position (optional)
+  - [ ] Add unit tests verifying Start, AdvanceChar, AdvanceLine, equality

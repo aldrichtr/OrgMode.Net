@@ -1,0 +1,81 @@
+:PROPERTIES:
+:ID:       651821df-11af-4b4e-9389-ffae5dc1ccca
+:END:
+#+TITLE: Org Elements
+#+SUBTITLE: The structure of the OrgMode syntax
+
+* Org Syntax structure
+These Elements were extracted from =org-element.el=
+
+* Greater Elements
+
+#+CAPTION: Greater Elements
+| ELisp Name          | .Net Name          | Notes |
+|---------------------+--------------------+-------|
+| center-block        | CenterBlock        |       |
+| drawer              | Drawer             |       |
+| dynamic-block       | DynamicBlock       |       |
+| footnote-definition | FootnoteDefinition |       |
+| headline            | Headline           |       |
+| inlinetask          | Inlinetask         |       |
+| item                | Item               |       |
+| plain-list          | PlainList          |       |
+| property-drawer     | PropertyDrawer     |       |
+| quote-block         | QuoteBlock         |       |
+| section             | Section            |       |
+| special-block       | SpecialBlock       |       |
+| table               | Table              |       |
+| org-data            | OrgData            |       |
+
+* Lesser Elements
+
+#+CAPTION: Lesser Elements
+| ELisp Name        | .Net Name        | Notes |
+|-------------------+------------------+-------|
+| babel-call        | BabelCall        |       |
+| clock             | Clock            |       |
+| comment           | Comment          |       |
+| comment-block     | CommentBlock     |       |
+| diary-sexp        | DiarySexp        |       |
+| example-block     | ExampleBlock     |       |
+| export-block      | ExportBlock      |       |
+| fixed-width       | FixedWidth       |       |
+| horizontal-rule   | HorizontalRule   |       |
+| keyword           | Keyword          |       |
+| latex-environment | LatexEnvironment |       |
+| node-property     | NodeProperty     |       |
+| paragraph         | Paragraph        |       |
+| planning          | Planning         |       |
+| src-block         | SrcBlock         |       |
+| table-row         | TableRow         |       |
+| verse-block       | VerseBlock       |       |
+
+* Objects
+
+#+CAPTION: Objects
+| ELisp Name         | .Net Name         | Notes |
+|--------------------+-------------------+-------|
+| bold               | Bold              |       |
+| citation           | Citation          |       |
+| citation-reference | CitationReference |       |
+| code               | Code              |       |
+| entity             | Entity            |       |
+| export-snippet     | ExportSnippet     |       |
+| footnote-reference | FootnoteReference |       |
+| inline-babel-call  | InlineBabelCall   |       |
+| inline-src-block   | InlineSrcBlock    |       |
+| italic             | Italic            |       |
+| line-break         | LineBreak         |       |
+| latex-fragment     | LatexFragment     |       |
+| link               | Link              |       |
+| macro              | Macro             |       |
+| radio-target       | RadioTarget       |       |
+| statistics-cookie  | StatisticsCookie  |       |
+| strike-through     | StrikeThrough     |       |
+| subscript          | Subscript         |       |
+| superscript        | Superscript       |       |
+| table-cell         | TableCell         |       |
+| target             | Target            |       |
+| timestamp          | Timestamp         |       |
+| underline          | Underline         |       |
+| verbatim           | Verbatim          |       |

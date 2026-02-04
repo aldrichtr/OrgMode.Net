@@ -1,0 +1,6 @@
+[*.cs]
+# Our namespace structure does not match our folder structure
+# We are organizing Elements into folders that match their
+# orgmode "class" (Greater, Lesser, etc.) but we want to leave
+# them in the OrgMode.Syntax namespace
+dotnet_diagnostic.IDE0130.severity = none
